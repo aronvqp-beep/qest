@@ -1,4 +1,4 @@
-// Упражнения: тесты + задания на написание кода
+// Квест по информатике 6–11: тесты + код (усложнённый) + 5 больших квестов
 const EXERCISES = {
   6: {
     title: "6 класс",
@@ -6,714 +6,713 @@ const EXERCISES = {
     items: [
       {
         id: "6-1", title: "Что такое информация?", type: "quiz",
-        theory: "Информация — сведения об окружающем мире. По способу восприятия: визуальная (зрение), аудиальная (слух), тактильная (осязание).",
+        theory: "Информация — сведения об окружающем мире. По способу восприятия: визуальная, аудиальная, тактильная.",
         example: "Картинка — визуальная, музыка — аудиальная.",
         question: "Что НЕ является видом информации по способу восприятия?",
         options: ["Визуальная", "Аудиальная", "Тактильная", "Цифровая"],
-        answer: 3,
-        explanation: "Цифровая — форма представления, а не способ восприятия."
+        answer: 3, explanation: "Цифровая — форма представления, не способ восприятия."
       },
       {
         id: "6-2", title: "Бит и байт", type: "quiz",
         theory: "Бит — 0 или 1. 8 бит = 1 байт.",
-        example: "Буква «А» занимает 1 байт = 8 бит.",
+        example: "Буква занимает 1 байт = 8 бит.",
         question: "Сколько бит в одном байте?",
         options: ["4", "8", "16", "1024"],
         answer: 1, explanation: "1 байт = 8 бит."
       },
       {
         id: "6-3", title: "Устройства ввода", type: "quiz",
-        theory: "Ввод: клавиатура, мышь, микрофон. Вывод: монитор, принтер, колонки.",
-        example: "Печатаешь — клавиатура (ввод). Смотришь на экран — монитор (вывод).",
+        theory: "Ввод: клавиатура, мышь. Вывод: монитор, принтер.",
+        example: "Печатаешь — ввод. Смотришь на экран — вывод.",
         question: "Какое устройство является устройством ВВОДА?",
         options: ["Монитор", "Принтер", "Клавиатура", "Колонки"],
-        answer: 2, explanation: "Клавиатура — устройство ввода."
+        answer: 2, explanation: "Клавиатура — ввод."
       },
       {
         id: "6-4", title: "Первая программа: print", type: "code",
-        theory: "В Python команда print() выводит текст на экран. Текст пишут в кавычках — одинарных или двойных.",
-        example: "print(\"Привет, мир!\")\n→ Привет, мир!",
-        hint: "Напиши: print(\"Привет, я программист!\")",
-        question: "Выведи на экран: Привет, я программист!",
-        starter: "print(\"...\")",
+        theory: "print() выводит текст. Текст — в кавычках. Каждая команда print — с новой строки, если их несколько.",
+        example: "print(\"А\")\nprint(\"Б\")\n→ А\nБ",
+        hint: "Нужна одна команда вывода. Текст внутри кавычек должен совпасть с заданием буква в букву (включая запятую и восклицательный знак).",
+        question: "Выведи ровно одну строку:\nПривет, я программист!",
+        starter: "",
         expectedOutput: "Привет, я программист!",
-        explanation: "Нужно: print(\"Привет, я программист!\")"
+        explanation: "Используй print с нужной строкой в кавычках."
       },
       {
-        id: "6-5", title: "Алгоритм — это...", type: "quiz",
-        theory: "Алгоритм — точное описание последовательности действий для решения задачи.",
-        example: "Алгоритм «почистить зубы»: щётка → паста → чистить → прополоскать.",
+        id: "6-5", title: "Алгоритм", type: "quiz",
+        theory: "Алгоритм — точное описание последовательности действий.",
+        example: "Почистить зубы: щётка → паста → чистить → прополоскать.",
         question: "Алгоритм — это:",
         options: ["Программа на Python", "Точное описание последовательности действий", "Список файлов", "Устройство"],
-        answer: 1, explanation: "Алгоритм — описание действий."
+        answer: 1, explanation: "Описание действий."
       },
       {
-        id: "6-6", title: "Вывод фразы", type: "code",
-        theory: "print может выводить любой текст. Замени текст в кавычках на нужный.",
-        example: "print(\"Анна\") → Анна",
-        hint: "print(\"Меня зовут Робот\")",
-        question: "Выведи на экран: Меня зовут Робот",
+        id: "6-6", title: "Три строки подряд", type: "code",
+        theory: "Несколько print подряд дают несколько строк вывода.",
+        example: "print(1)\nprint(2)\nprint(3)",
+        hint: "Сделай три отдельные команды вывода. Порядок строк важен: сначала имя, потом класс, потом город.",
+        question: "Выведи три строки (каждая с новой строки):\nРобот\n6 класс\nМосква",
         starter: "",
-        expectedOutput: "Меня зовут Робот",
-        explanation: "print(\"Меня зовут Робот\")"
+        expectedOutput: "Робот\n6 класс\nМосква",
+        explanation: "Три print с нужными текстами."
       },
       {
-        id: "6-7", title: "Двоичное число 101", type: "quiz",
-        theory: "В двоичной: разряды — степени 2. 101₂ = 4+0+1 = 5.",
-        example: "1101₂ = 8+4+1 = 13.",
-        question: "Чему равно двоичное число 101 в десятичной?",
+        id: "6-7", title: "Двоичное 101", type: "quiz",
+        theory: "101₂ = 4+0+1 = 5.",
+        example: "1101₂ = 13.",
+        question: "Чему равно 101 в десятичной?",
         options: ["3", "5", "6", "7"],
-        answer: 1, explanation: "1·4+0·2+1·1 = 5."
+        answer: 1, explanation: "5."
       },
       {
-        id: "6-8", title: "Две строки", type: "code",
-        theory: "Каждый print выводит текст с новой строки.",
-        example: "print(\"Раз\")\nprint(\"Два\")",
-        hint: "Две команды print — одна под другой.",
-        question: "Выведи две строки:\nПривет\nМир",
+        id: "6-8", title: "Числа и текст вместе", type: "code",
+        theory: "print может принимать несколько аргументов через запятую: они выводятся через пробел.",
+        example: "print(\"Сумма:\", 10) → Сумма: 10",
+        hint: "Можно одной командой print с несколькими частями через запятую, либо одной готовой строкой. Итог на экране должен быть: Год 2026",
+        question: "Выведи строку: Год 2026\n(число можно передать отдельно от текста)",
         starter: "",
-        expectedOutput: "Привет\nМир",
-        explanation: "print(\"Привет\") и print(\"Мир\")"
+        expectedOutput: "Год 2026",
+        explanation: "print(\"Год\", 2026) или print(\"Год 2026\")."
       },
       {
-        id: "6-9", title: "Безопасность в сети", type: "quiz",
-        theory: "Нельзя сообщать незнакомым адрес, школу, телефон, пароли.",
-        example: "В игре просят номер школы — не отвечай.",
-        question: "Что НЕЛЬЗЯ сообщать незнакомым в интернете?",
+        id: "6-9", title: "Безопасность", type: "quiz",
+        theory: "Нельзя сообщать незнакомым адрес, школу, телефон.",
+        example: "Просят номер школы — не отвечай.",
+        question: "Что НЕЛЬЗЯ сообщать незнакомым?",
         options: ["Любимый цвет", "Адрес дома и школу", "Любимый предмет", "Имя питомца"],
-        answer: 1, explanation: "Личные данные защищаем."
+        answer: 1, explanation: "Личные данные."
       },
       {
-        id: "6-10", title: "Вывод числа", type: "code",
-        theory: "Числа в print можно писать без кавычек: print(42).",
-        example: "print(100) → 100",
-        hint: "print(2024)",
-        question: "Выведи на экран число 2024",
+        id: "6-10", title: "Арифметика в print", type: "code",
+        theory: "Внутри print можно считать: print(2 + 3) выведет 5. Скобки у print обязательны.",
+        example: "print(10 * 3) → 30",
+        hint: "Не сохраняй в переменную — сразу посчитай выражение 15 * 4 внутри print.",
+        question: "Выведи результат умножения 15 на 4 (только число).",
         starter: "",
-        expectedOutput: "2024",
-        explanation: "print(2024)"
+        expectedOutput: "60",
+        explanation: "print(15 * 4)"
       },
       {
         id: "6-11", title: "Ctrl+C", type: "quiz",
-        theory: "Ctrl+C — копировать, Ctrl+V — вставить, Ctrl+X — вырезать, Ctrl+Z — отменить.",
+        theory: "Ctrl+C — копировать, Ctrl+V — вставить.",
         example: "Выделил → Ctrl+C → Ctrl+V.",
-        question: "Какая комбинация для копирования?",
+        question: "Комбинация для копирования?",
         options: ["Ctrl+V", "Ctrl+C", "Ctrl+X", "Ctrl+Z"],
-        answer: 1, explanation: "Ctrl+C = Copy."
+        answer: 1, explanation: "Ctrl+C."
       },
       {
-        id: "6-12", title: "Текст и число", type: "code",
-        theory: "Можно вывести текст и число: print(\"Ответ:\", 5)",
-        example: "print(\"Сумма:\", 10) → Сумма: 10",
-        hint: "print(\"Мне 12 лет\")",
-        question: "Выведи: Мне 12 лет",
+        id: "6-12", title: "Два числа — сумма и произведение", type: "code",
+        theory: "Можно вывести несколько результатов: сначала сумму, потом произведение — двумя print.",
+        example: "print(2+3)\nprint(2*3) → 5\n6",
+        hint: "Возьми числа 7 и 8. Первая строка вывода — их сумма, вторая — произведение. Две команды print.",
+        question: "Для чисел 7 и 8 выведи:\nсумму\nпроизведение\n(каждое с новой строки, только числа)",
         starter: "",
-        expectedOutput: "Мне 12 лет",
-        explanation: "print(\"Мне 12 лет\")"
+        expectedOutput: "15\n56",
+        explanation: "print(7+8) и print(7*8)."
       }
     ]
   },
   7: {
     title: "7 класс",
-    subtitle: "Переменные, ввод и простые алгоритмы",
+    subtitle: "Переменные и простые алгоритмы",
     items: [
       {
-        id: "7-1", title: "Кодирование: 7 бит", type: "quiz",
-        theory: "n бит кодируют 2ⁿ значений. 7 бит → 128.",
-        example: "3 бита → 8 комбинаций.",
-        question: "Сколько символов можно закодировать 7 битами?",
+        id: "7-1", title: "7 бит", type: "quiz",
+        theory: "n бит → 2ⁿ значений. 7 бит → 128.",
+        example: "3 бита → 8.",
+        question: "Сколько символов кодируют 7 бит?",
         options: ["64", "128", "256", "512"],
-        answer: 1, explanation: "2⁷ = 128."
+        answer: 1, explanation: "128."
       },
       {
-        id: "7-2", title: "Переменная", type: "code",
-        theory: "Переменная хранит значение. a = 10, затем print(a).",
-        example: "name = \"Аня\"\nprint(name) → Аня",
-        hint: "a = 10\nprint(a)",
-        question: "Создай переменную a со значением 10 и выведи её.",
-        starter: "a = \nprint()",
-        expectedOutput: "10",
-        explanation: "a = 10\nprint(a)"
+        id: "7-2", title: "Переменные и формула", type: "code",
+        theory: "Сначала присвой значения переменным, потом используй их в выражении.",
+        example: "a=2\nb=3\nprint(a*b+1)",
+        hint: "Создай a и b. Нужно вывести a*a + b*b (сумма квадратов). Для a=3, b=4 ответ известен из теоремы Пифагора.",
+        question: "a = 3, b = 4. Выведи a² + b² (сумму квадратов).",
+        starter: "a = 3\nb = 4\n",
+        expectedOutput: "25",
+        explanation: "print(a*a + b*b) → 9+16=25."
       },
       {
         id: "7-3", title: "Ветвление", type: "quiz",
-        theory: "Ветвление: ЕСЛИ условие ТО действие1 ИНАЧЕ действие2.",
-        example: "ЕСЛИ дождь ТО зонт ИНАЧЕ кепка.",
-        question: "Какая конструкция выбирает действие по условию?",
+        theory: "Ветвление выбирает действие по условию.",
+        example: "ЕСЛИ дождь ТО зонт.",
+        question: "Конструкция выбора по условию?",
         options: ["Цикл", "Ветвление", "Линейная", "Рекурсия"],
-        answer: 1, explanation: "Ветвление (if)."
+        answer: 1, explanation: "Ветвление."
       },
       {
-        id: "7-4", title: "Сумма переменных", type: "code",
-        theory: "С переменными можно считать: x + y.",
-        example: "a = 3\nb = 4\nprint(a + b) → 7",
-        hint: "x = 5\ny = 7\nprint(x + y)",
-        question: "Задай x = 5, y = 7 и выведи их сумму.",
-        starter: "",
-        expectedOutput: "12",
-        explanation: "x = 5\ny = 7\nprint(x + y)"
+        id: "7-4", title: "Обмен значениями", type: "code",
+        theory: "Чтобы поменять местами x и y, нужна третья переменная (или множественное присваивание x,y = y,x).",
+        example: "x, y = y, x",
+        hint: "После обмена должно получиться: x равен тому, что было в y, и наоборот. Выведи x, затем y. Старт: x=10, y=20.",
+        question: "x=10, y=20. Поменяй их местами и выведи x, затем y (с новой строки).",
+        starter: "x = 10\ny = 20\n",
+        expectedOutput: "20\n10",
+        explanation: "x, y = y, x затем два print."
       },
       {
-        id: "7-5", title: "Логика И и ИЛИ", type: "quiz",
-        theory: "И — оба истинны. ИЛИ — хотя бы одно истинно.",
-        example: "(true И false) = false. false ИЛИ true = true.",
+        id: "7-5", title: "Логика", type: "quiz",
+        theory: "И — оба истинны. ИЛИ — хотя бы одно.",
+        example: "false OR true = true.",
         question: "(true И false) ИЛИ true = ?",
         options: ["true", "false", "Ошибка", "null"],
-        answer: 0, explanation: "false OR true = true."
+        answer: 0, explanation: "true."
       },
       {
-        id: "7-6", title: "Строка в переменной", type: "code",
-        theory: "Строки тоже в переменных: word = \"Текст\"",
-        example: "msg = \"Ура!\"\nprint(msg)",
-        hint: "word = \"Информатика\"\nprint(word)",
-        question: "Сохрани в word текст Информатика и выведи.",
+        id: "7-6", title: "Строка и длина", type: "code",
+        theory: "len(s) — число символов в строке. Строку можно хранить в переменной.",
+        example: "print(len(\"Hi\")) → 2",
+        hint: "Сохрани слово «Алгоритм» в переменную. Выведи сначала само слово, потом его длину (два print).",
+        question: "Выведи:\nАлгоритм\nи на следующей строке — сколько в этом слове букв.",
         starter: "",
-        expectedOutput: "Информатика",
-        explanation: "word = \"Информатика\"\nprint(word)"
+        expectedOutput: "Алгоритм\n8",
+        explanation: "s=\"Алгоритм\"\nprint(s)\nprint(len(s))"
       },
       {
         id: "7-7", title: "13 в двоичную", type: "input",
-        theory: "Делим на 2, остатки снизу вверх.",
-        example: "13 → 1101₂",
-        question: "Переведи 13 в двоичную систему (без пробелов).",
-        answer: "1101", explanation: "13 = 8+4+1 = 1101."
+        theory: "Деление на 2, остатки снизу вверх.",
+        example: "13 → 1101",
+        question: "13 в двоичную (без пробелов)?",
+        answer: "1101", explanation: "1101."
       },
       {
-        id: "7-8", title: "Умножение", type: "code",
-        theory: "Оператор * — умножение.",
-        example: "print(6 * 7) → 42",
-        hint: "n = 6\nprint(n * 7)",
-        question: "Задай n = 6 и выведи n * 7.",
+        id: "7-8", title: "Среднее арифметическое", type: "code",
+        theory: "Среднее = сумма / количество. В Python 3 деление / даёт дробь.",
+        example: "print((2+4)/2) → 3.0",
+        hint: "Три числа: 10, 20, 30. Сложи и раздели на 3. Можно без переменных или с ними.",
+        question: "Выведи среднее арифметическое чисел 10, 20 и 30.",
         starter: "",
-        expectedOutput: "42",
-        explanation: "n = 6\nprint(n * 7)"
+        expectedOutput: "20.0",
+        explanation: "print((10+20+30)/3)"
       },
       {
         id: "7-9", title: "Цикл пока", type: "quiz",
-        theory: "while проверяет условие ДО тела. Если ложно — 0 раз.",
-        example: "Пока не кипит — греть.",
-        question: "Сколько раз выполнится тело, если условие сразу ложно?",
+        theory: "while: если условие сразу ложно — 0 раз.",
+        example: "Условие ложно → тело не выполняется.",
+        question: "Сколько раз тело, если условие сразу ложно?",
         options: ["1", "0", "Бесконечно", "Зависит"],
-        answer: 1, explanation: "0 раз."
+        answer: 1, explanation: "0."
       },
       {
-        id: "7-10", title: "Два вывода", type: "code",
-        theory: "Можно вывести несколько переменных подряд.",
-        example: "print(a)\nprint(b)",
-        hint: "x = 100\ny = 200\nprint(x)\nprint(y)",
-        question: "Задай x=100, y=200. Выведи x, затем y (с новой строки).",
+        id: "7-10", title: "Последовательность", type: "code",
+        theory: "Можно вывести несколько значений, меняя переменную шаг за шагом.",
+        example: "n=1\nprint(n)\nn=n+2\nprint(n)",
+        hint: "Начни с 5. Каждый следующий элемент на 3 больше. Нужно 4 числа: 5, 8, 11, 14.",
+        question: "Выведи арифметическую прогрессию из 4 чисел, начиная с 5, шаг 3.",
         starter: "",
-        expectedOutput: "100\n200",
-        explanation: "x=100\ny=200\nprint(x)\nprint(y)"
+        expectedOutput: "5\n8\n11\n14",
+        explanation: "Через переменную и прибавление 3, либо четыре print."
       },
       {
         id: "7-11", title: "Таблица истинности", type: "quiz",
-        theory: "Для n переменных строк: 2ⁿ.",
-        example: "2 переменные → 4 строки.",
-        question: "Сколько строк в таблице истинности для 3 переменных?",
+        theory: "n переменных → 2ⁿ строк.",
+        example: "3 переменные → 8.",
+        question: "Строк для 3 переменных?",
         options: ["3", "6", "8", "9"],
-        answer: 2, explanation: "2³ = 8."
+        answer: 2, explanation: "8."
       },
       {
-        id: "7-12", title: "Площадь", type: "code",
-        theory: "Площадь прямоугольника = длина × ширина.",
-        example: "print(5 * 4) → 20",
-        hint: "print(8 * 5)",
-        question: "Длина 8, ширина 5. Выведи площадь.",
+        id: "7-12", title: "Периметр и площадь", type: "code",
+        theory: "Прямоугольник: периметр = 2*(a+b), площадь = a*b.",
+        example: "a=2;b=3 → P=10, S=6",
+        hint: "Стороны 6 и 9. Сначала выведи периметр, потом площадь — два числа на разных строках.",
+        question: "Прямоугольник 6×9. Выведи:\nпериметр\nплощадь",
         starter: "",
-        expectedOutput: "40",
-        explanation: "print(8 * 5)"
+        expectedOutput: "30\n54",
+        explanation: "2*(6+9)=30, 6*9=54."
       }
     ]
   },
   8: {
     title: "8 класс",
-    subtitle: "Python: условия, циклы, списки",
+    subtitle: "Условия, циклы, списки",
     items: [
       {
-        id: "8-1", title: "Язык Python", type: "quiz",
-        theory: "Python — простой язык, часто первый в школе.",
-        example: "print(\"Привет\") — одна строка.",
-        question: "Какой язык чаще изучают первым в школе?",
+        id: "8-1", title: "Python", type: "quiz",
+        theory: "Python часто первый язык в школе.",
+        example: "print — одна строка.",
+        question: "Какой язык чаще первый в школе?",
         options: ["C++", "Python", "Assembler", "Java"],
         answer: 1, explanation: "Python."
       },
       {
-        id: "8-2", title: "Условие if", type: "code",
-        theory: "if условие:\n    действие\nОтступ обязателен!",
-        example: "x = 10\nif x > 0:\n    print(\"Да\")",
-        hint: "x = 5\nif x > 0:\n    print(\"Положительное\")",
-        question: "Задай x = 5. Если x > 0, выведи: Положительное",
-        starter: "x = 5\n",
-        expectedOutput: "Положительное",
-        explanation: "if x > 0:\n    print(\"Положительное\")"
+        id: "8-2", title: "if: знак числа", type: "code",
+        theory: "if / elif / else выбирают ветку. Сравнивай с нулём.",
+        example: "if x > 0:\n    print(\"+\")\nelif x < 0:\n    print(\"-\")\nelse:\n    print(\"0\")",
+        hint: "x уже равен -7. Нужно одно слово на русском: «отрицательное», «положительное» или «ноль» — в зависимости от знака.",
+        question: "x = -7. Выведи слово: отрицательное, положительное или ноль — по знаку x.",
+        starter: "x = -7\n",
+        expectedOutput: "отрицательное",
+        explanation: "if x < 0: print(\"отрицательное\") ..."
       },
       {
-        id: "8-3", title: "range(5)", type: "quiz",
-        theory: "range(5) даёт 0,1,2,3,4 — пять чисел.",
-        example: "for i in range(3): print(i) → 0 1 2",
-        question: "Сколько раз выполнится: for i in range(5): ?",
+        id: "8-3", title: "range", type: "quiz",
+        theory: "range(5) → 0..4, пять значений.",
+        example: "range(3) → 0,1,2",
+        question: "Сколько раз: for i in range(5)?",
         options: ["4", "5", "6", "0"],
-        answer: 1, explanation: "5 раз."
+        answer: 1, explanation: "5."
       },
       {
-        id: "8-4", title: "Цикл for", type: "code",
-        theory: "for i in range(n): повторяет тело n раз.",
-        example: "for i in range(3):\n    print(i)",
-        hint: "for i in range(4):\n    print(i)",
-        question: "Выведи числа 0, 1, 2, 3 каждое с новой строки.",
+        id: "8-4", title: "Цикл: чётные до N", type: "code",
+        theory: "range(start, stop, step) — третьим аргументом задаётся шаг.",
+        example: "range(0, 10, 2) → 0,2,4,6,8",
+        hint: "Нужны чётные от 2 до 10 включительно. Подумай про start, stop и step у range (stop не входит в диапазон!).",
+        question: "Выведи чётные числа от 2 до 10 включительно.",
         starter: "",
-        expectedOutput: "0\n1\n2\n3",
-        explanation: "for i in range(4):\n    print(i)"
+        expectedOutput: "2\n4\n6\n8\n10",
+        explanation: "for i in range(2, 11, 2): print(i)"
       },
       {
-        id: "8-5", title: "Индекс списка", type: "input",
-        theory: "Индексы с 0: a[0], a[1], a[2]...",
-        example: "a=[10,20,30,40]; a[2] → 30",
-        question: "Как получить третий элемент a = [10, 20, 30, 40]?",
-        answer: "a[2]", explanation: "Индекс 2."
+        id: "8-5", title: "Индекс", type: "input",
+        theory: "Индексы с 0.",
+        example: "a[2] — третий элемент.",
+        question: "Третий элемент a=[10,20,30,40]?",
+        answer: "a[2]", explanation: "a[2]."
       },
       {
-        id: "8-6", title: "Список и print", type: "code",
-        theory: "colors = [\"а\", \"б\"]\nprint(colors[0])",
-        example: "a = [5, 10, 15]\nprint(a[1]) → 10",
-        hint: "colors = [\"красный\", \"зелёный\", \"синий\"]\nprint(colors[0])",
-        question: "Список colors: красный, зелёный, синий. Выведи первый элемент.",
-        starter: "",
-        expectedOutput: "красный",
-        explanation: "colors = [\"красный\", \"зелёный\", \"синий\"]\nprint(colors[0])"
+        id: "8-6", title: "Сумма и длина списка", type: "code",
+        theory: "Обходи список циклом for x in lst. Накапливай сумму. len(lst) — длина.",
+        example: "s=0\nfor x in a:\n    s=s+x",
+        hint: "Список уже дан. Посчитай сумму элементов и выведи её. Потом (второй строкой) выведи количество элементов.",
+        question: "a = [4, 7, 1, 9, 3]. Выведи:\nсумму элементов\nколичество элементов",
+        starter: "a = [4, 7, 1, 9, 3]\n",
+        expectedOutput: "24\n5",
+        explanation: "Сумма 24, len=5."
       },
       {
         id: "8-7", title: "LAN", type: "quiz",
-        theory: "LAN = Local Area Network — локальная сеть.",
-        example: "Компьютеры в кабинете — LAN.",
-        question: "LAN означает:",
-        options: ["Глобальная сеть", "Локальная сеть", "Беспроводная", "Скорость"],
-        answer: 1, explanation: "Локальная сеть."
+        theory: "LAN — локальная сеть.",
+        example: "Кабинет — LAN.",
+        question: "LAN — это?",
+        options: ["Глобальная", "Локальная сеть", "Беспроводная", "Скорость"],
+        answer: 1, explanation: "Локальная."
       },
       {
-        id: "8-8", title: "if-else", type: "code",
-        theory: "if условие:\n    ...\nelse:\n    ...",
-        example: "if n == 0:\n    print(\"Ноль\")\nelse:\n    print(\"Не ноль\")",
-        hint: "n = 0\nif n == 0:\n    print(\"Ноль\")\nelse:\n    print(\"Не ноль\")",
-        question: "n = 0. Если n равно 0 — выведи Ноль, иначе — Не ноль.",
-        starter: "n = 0\n",
-        expectedOutput: "Ноль",
-        explanation: "if n == 0: print(\"Ноль\") else: print(\"Не ноль\")"
+        id: "8-8", title: "Максимум из трёх", type: "code",
+        theory: "Сравнивай через if. Или используй вложенные условия.",
+        example: "if a >= b and a >= c: print(a)",
+        hint: "Даны a,b,c. Найди наибольшее без функции max — только if/else. Выведи одно число.",
+        question: "a=12, b=25, c=9. Выведи наибольшее из трёх.",
+        starter: "a = 12\nb = 25\nc = 9\n",
+        expectedOutput: "25",
+        explanation: "Сравнения if → 25."
       },
       {
-        id: "8-9", title: "IP-адрес", type: "quiz",
-        theory: "IPv4: 4 октета, например 192.168.0.1",
-        example: "Роутер часто 192.168.1.1",
-        question: "Сколько октетов в IPv4?",
+        id: "8-9", title: "IPv4", type: "quiz",
+        theory: "IPv4 — 4 октета.",
+        example: "192.168.0.1",
+        question: "Октетов в IPv4?",
         options: ["2", "3", "4", "6"],
-        answer: 2, explanation: "4 октета."
+        answer: 2, explanation: "4."
       },
       {
-        id: "8-10", title: "Сумма списка", type: "code",
-        theory: "Сложить элементы: a[0]+a[1]+a[2]",
-        example: "print(nums[0]+nums[1]+nums[2])",
-        hint: "nums = [10, 20, 30]\nprint(nums[0] + nums[1] + nums[2])",
-        question: "nums = [10, 20, 30]. Выведи сумму всех элементов.",
-        starter: "nums = [10, 20, 30]\n",
-        expectedOutput: "60",
-        explanation: "print(nums[0]+nums[1]+nums[2])"
+        id: "8-10", title: "Фильтр: больше порога", type: "code",
+        theory: "В цикле проверяй условие и печатай только подходящие элементы.",
+        example: "for x in a:\n    if x > 5:\n        print(x)",
+        hint: "Порог — 10. Печатай только те числа из списка, что строго больше 10, в том же порядке.",
+        question: "a = [5, 12, 3, 18, 10, 7, 25]. Выведи элементы > 10.",
+        starter: "a = [5, 12, 3, 18, 10, 7, 25]\n",
+        expectedOutput: "12\n18\n25",
+        explanation: "12, 18, 25."
       },
       {
-        id: "8-11", title: "Алгоритм Евклида", type: "quiz",
-        theory: "Алгоритм Евклида находит НОД двух чисел.",
+        id: "8-11", title: "Евклид", type: "quiz",
+        theory: "Евклид находит НОД.",
         example: "НОД(48,18)=6",
-        question: "Алгоритм Евклида находит:",
-        options: ["НОК", "НОД", "Простые числа", "Факториал"],
+        question: "Алгоритм Евклида находит?",
+        options: ["НОК", "НОД", "Простые", "Факториал"],
         answer: 1, explanation: "НОД."
       },
       {
-        id: "8-12", title: "Квадраты чисел", type: "code",
-        theory: "В цикле можно считать i*i.",
-        example: "for i in range(1,4):\n    print(i*i)",
-        hint: "for i in range(1, 5):\n    print(i * i)",
-        question: "Выведи квадраты чисел 1, 2, 3, 4.",
-        starter: "",
-        expectedOutput: "1\n4\n9\n16",
-        explanation: "for i in range(1, 5):\n    print(i * i)"
+        id: "8-12", title: "Таблица умножения на n", type: "code",
+        theory: "Цикл for i in range(1, 11) и печать n*i.",
+        example: "for i in range(1,4):\n    print(2*i)",
+        hint: "n=7. Выведи 7 произведений: 7*1, 7*2, … 7*10 — по одному числу на строку.",
+        question: "Выведи таблицу умножения на 7 (от 7×1 до 7×10), только результаты.",
+        starter: "n = 7\n",
+        expectedOutput: "7\n14\n21\n28\n35\n42\n49\n56\n63\n70",
+        explanation: "for i in range(1,11): print(n*i)"
       }
     ]
   },
   9: {
     title: "9 класс",
-    subtitle: "Функции, строки, основы веб",
+    subtitle: "Функции, строки, веб-основы",
     items: [
       {
-        id: "9-1", title: "Слово def", type: "quiz",
-        theory: "Функция объявляется через def имя():",
-        example: "def privet():\n    print(\"Hi\")",
-        question: "Ключевое слово для функции в Python?",
+        id: "9-1", title: "def", type: "quiz",
+        theory: "Функция: def имя():",
+        example: "def f():\n    print(1)",
+        question: "Ключевое слово функции?",
         options: ["function", "def", "func", "define"],
         answer: 1, explanation: "def."
       },
       {
-        id: "9-2", title: "Простая функция", type: "code",
-        theory: "def имя():\n    тело\nПотом вызов: имя()",
-        example: "def hello():\n    print(\"Hi\")\nhello()",
-        hint: "def greet():\n    print(\"Привет\")\ngreet()",
-        question: "Функция greet печатает Привет. Напиши и вызови её.",
+        id: "9-2", title: "Функция приветствия", type: "code",
+        theory: "Функция может принимать параметр и использовать его внутри.",
+        example: "def hi(name):\n    print(\"Hi\", name)",
+        hint: "Имя функции — hello. Параметр — name. Внутри собери фразу «Привет, » + name + «!». Вызови с аргументом «Мир».",
+        question: "Напиши hello(name), которая печатает: Привет, <name>!\nВызови hello(\"Мир\").",
         starter: "",
-        expectedOutput: "Привет",
-        explanation: "def greet():\n    print(\"Привет\")\ngreet()"
+        expectedOutput: "Привет, Мир!",
+        explanation: "def hello(name): print(\"Привет, \" + name + \"!\")\nhello(\"Мир\")"
       },
       {
-        id: "9-3", title: "Срез строки", type: "input",
-        theory: "s[0:5] — символы с 0 по 4.",
-        example: "\"Информатика\"[0:5] = \"Инфор\"",
-        question: "s = \"Информатика\". Что вернёт s[0:5]?",
-        answer: "Инфор", explanation: "Индексы 0–4."
+        id: "9-3", title: "Срез", type: "input",
+        theory: "s[0:5] — символы 0..4.",
+        example: "\"Информатика\"[0:5]=\"Инфор\"",
+        question: "s=\"Информатика\". s[0:5] = ?",
+        answer: "Инфор", explanation: "Инфор."
       },
       {
-        id: "9-4", title: "Функция с параметром", type: "code",
-        theory: "def f(x):\n    print(x)\nf(5) передаёт 5.",
-        example: "def show(n):\n    print(n)\nshow(42)",
-        hint: "def show(msg):\n    print(msg)\nshow(\"Код\")",
-        question: "Функция show(msg) печатает msg. Вызови с аргументом Код.",
+        id: "9-4", title: "return: площадь круга", type: "code",
+        theory: "return отдаёт значение вызывающему коду. π можно взять 3.14.",
+        example: "def sq(x):\n    return x*x\nprint(sq(3))",
+        hint: "Формула πr². Функция area(r) должна return значение, а не print внутри. Снаружи — print(area(5)). π = 3.14.",
+        question: "area(r) возвращает площадь круга (π=3.14). Выведи area(5).",
         starter: "",
-        expectedOutput: "Код",
-        explanation: "def show(msg):\n    print(msg)\nshow(\"Код\")"
+        expectedOutput: "78.5",
+        explanation: "def area(r): return 3.14*r*r\nprint(area(5))"
       },
       {
-        id: "9-5", title: "Тег ссылки", type: "quiz",
-        theory: "HTML: <a href=\"...\">текст</a> — ссылка.",
-        example: "<a href=\"https://ya.ru\">Яндекс</a>",
-        question: "Какой тег создаёт гиперссылку?",
+        id: "9-5", title: "Тег <a>", type: "quiz",
+        theory: "<a href=...> — ссылка.",
+        example: "<a href=\"...\">текст</a>",
+        question: "Тег гиперссылки?",
         options: ["<p>", "<a>", "<link>", "<href>"],
         answer: 1, explanation: "<a>."
       },
       {
-        id: "9-6", title: "return", type: "code",
-        theory: "return возвращает значение из функции.",
-        example: "def add(a,b):\n    return a+b\nprint(add(2,3)) → 5",
-        hint: "def double(x):\n    return x * 2\nprint(double(7))",
-        question: "Функция double(x) возвращает x*2. Выведи double(7).",
-        starter: "",
-        expectedOutput: "14",
-        explanation: "def double(x):\n    return x * 2\nprint(double(7))"
+        id: "9-6", title: "Подсчёт буквы в слове", type: "code",
+        theory: "Цикл по символам: for ch in s. Сравнивай с нужной буквой.",
+        example: "c=0\nfor ch in s:\n    if ch == \"а\":\n        c=c+1",
+        hint: "Слово «программирование». Посчитай, сколько раз встречается буква «р» (строчная).",
+        question: "Сколько раз буква «р» в слове программирование? Выведи число.",
+        starter: "s = \"программирование\"\n",
+        expectedOutput: "3",
+        explanation: "р встречается 3 раза."
       },
       {
         id: "9-7", title: "HTTPS", type: "quiz",
-        theory: "HTTPS = HTTP + шифрование.",
-        example: "Банк всегда на https://",
-        question: "Чем HTTPS отличается от HTTP?",
-        options: ["Скоростью", "Шифрованием", "Только мобильный", "Ничем"],
+        theory: "HTTPS — HTTP с шифрованием.",
+        example: "Банк на https.",
+        question: "Отличие HTTPS от HTTP?",
+        options: ["Скорость", "Шифрование", "Только мобильный", "Ничем"],
         answer: 1, explanation: "Шифрование."
       },
       {
-        id: "9-8", title: "Длина строки", type: "code",
-        theory: "len(s) — длина строки.",
-        example: "print(len(\"Привет\")) → 6",
-        hint: "print(len(\"Python\"))",
-        question: "Выведи длину строки Python",
+        id: "9-8", title: "Факториал функцией", type: "code",
+        theory: "Факториал n! = 1*2*...*n. Цикл внутри функции, return результат.",
+        example: "def fact(n):\n    f=1\n    for i in range(1,n+1):\n        f=f*i\n    return f",
+        hint: "Напиши fact(n) с циклом. Вызови fact(6). 6! = 720.",
+        question: "Функция fact(n) возвращает n!. Выведи fact(6).",
         starter: "",
-        expectedOutput: "6",
-        explanation: "print(len(\"Python\"))"
+        expectedOutput: "720",
+        explanation: "fact(6)=720."
       },
       {
         id: "9-9", title: "Рекурсия", type: "quiz",
-        theory: "Рекурсия — функция вызывает себя. Нужен базовый случай.",
-        example: "fact(n): if n<=1: return 1",
-        question: "Что обязательно у рекурсивной функции?",
-        options: ["Цикл for", "Базовый случай", "Глобальные переменные", "Список"],
+        theory: "Нужен базовый случай выхода.",
+        example: "if n<=1: return 1",
+        question: "Обязательно у рекурсии?",
+        options: ["Цикл for", "Базовый случай", "Глобальные", "Список"],
         answer: 1, explanation: "Базовый случай."
       },
       {
-        id: "9-10", title: "Сумма функцией", type: "code",
-        theory: "Функция с двумя параметрами и return.",
-        example: "def summa(a,b):\n    return a+b",
-        hint: "def summa(a, b):\n    return a + b\nprint(summa(3, 9))",
-        question: "summa(a,b) возвращает сумму. Выведи summa(3, 9).",
+        id: "9-10", title: "Минимум в списке функцией", type: "code",
+        theory: "Функция принимает список, обходит его, return минимум.",
+        example: "m = a[0]\nfor x in a:\n    if x < m: m = x",
+        hint: "Функция minimum(arr). Не используй встроенный min. Список [8, 3, 15, 1, 9] — найди наименьший.",
+        question: "minimum(arr) возвращает минимум. Выведи minimum([8, 3, 15, 1, 9]).",
         starter: "",
-        expectedOutput: "12",
-        explanation: "def summa(a,b):\n    return a+b\nprint(summa(3,9))"
+        expectedOutput: "1",
+        explanation: "Минимум = 1."
       },
       {
         id: "9-11", title: "Фишинг", type: "quiz",
-        theory: "Фишинг — обман ради паролей через поддельные письма/сайты.",
-        example: "«Аккаунт заблокирован, введите пароль» — фишинг.",
-        question: "Фишинг — это:",
-        options: ["Спорт", "Мошенничество ради личных данных", "Антивирус", "Шифрование"],
-        answer: 1, explanation: "Кража данных обманом."
+        theory: "Фишинг — кража данных через обман.",
+        example: "Поддельное письмо банка.",
+        question: "Фишинг — это?",
+        options: ["Спорт", "Мошенничество ради данных", "Антивирус", "Шифрование"],
+        answer: 1, explanation: "Мошенничество."
       },
       {
-        id: "9-12", title: "Цикл и слово", type: "code",
-        theory: "print в цикле повторяет вывод.",
-        example: "for i in range(3):\n    print(\"Go\")",
-        hint: "for i in range(3):\n    print(\"Код\")",
-        question: "Выведи слово Код три раза (каждое с новой строки).",
+        id: "9-12", title: "Степень через цикл", type: "code",
+        theory: "a^b: начинаем с 1, умножаем на a, b раз.",
+        example: "r=1\nfor i in range(b):\n    r=r*a",
+        hint: "Возведи 2 в степень 8. Цикл умножения, без оператора ** (если хочешь — можно и с **, но лучше цикл).",
+        question: "Выведи 2⁸ (два в степени восемь).",
         starter: "",
-        expectedOutput: "Код\nКод\nКод",
-        explanation: "for i in range(3):\n    print(\"Код\")"
+        expectedOutput: "256",
+        explanation: "256."
       }
     ]
   },
   10: {
     title: "10 класс",
-    subtitle: "ООП, структуры данных, алгоритмы",
+    subtitle: "Алгоритмы и структуры данных",
     items: [
       {
-        id: "10-1", title: "Класс в ООП", type: "quiz",
-        theory: "Класс — шаблон. Объект — экземпляр.",
-        example: "Класс «Собака», объект — «Шарик».",
-        question: "Класс в ООП — это:",
-        options: ["Конкретный объект", "Шаблон для объектов", "Функция", "Переменная"],
+        id: "10-1", title: "Класс ООП", type: "quiz",
+        theory: "Класс — шаблон, объект — экземпляр.",
+        example: "Класс Собака → объект Шарик.",
+        question: "Класс — это?",
+        options: ["Объект", "Шаблон для объектов", "Функция", "Переменная"],
         answer: 1, explanation: "Шаблон."
       },
       {
-        id: "10-2", title: "Факториал циклом", type: "code",
-        theory: "n! = 1·2·...·n. Считаем циклом.",
-        example: "f=1\nfor i in range(1,6):\n    f=f*i\nprint(f)",
-        hint: "f = 1\nfor i in range(1, 6):\n    f = f * i\nprint(f)",
-        question: "Вычисли 5! циклом и выведи результат.",
+        id: "10-2", title: "Сумма ряда", type: "code",
+        theory: "Сумма 1²+2²+...+n². Цикл с накоплением.",
+        example: "s=0\nfor i in range(1,n+1):\n    s=s+i*i",
+        hint: "n=5: 1+4+9+16+25. Напиши цикл до n включительно.",
+        question: "Выведи сумму квадратов чисел от 1 до 5.",
         starter: "",
-        expectedOutput: "120",
-        explanation: "f=1\nfor i in range(1,6):\n    f*=i\nprint(f)"
+        expectedOutput: "55",
+        explanation: "55."
       },
       {
         id: "10-3", title: "Бинарный поиск", type: "quiz",
-        theory: "Бинарный поиск — O(log n).",
-        example: "1024 элемента → ~10 сравнений.",
+        theory: "O(log n).",
+        example: "Деление пополам.",
         question: "Сложность бинарного поиска?",
         options: ["O(n)", "O(n²)", "O(log n)", "O(1)"],
         answer: 2, explanation: "O(log n)."
       },
       {
-        id: "10-4", title: "Стек", type: "quiz",
-        theory: "Стек: LIFO — последний пришёл, первый ушёл.",
+        id: "10-4", title: "Стек LIFO", type: "quiz",
+        theory: "Последний пришёл — первый ушёл.",
         example: "Стопка тарелок.",
         question: "Принцип стека?",
         options: ["FIFO", "LIFO", "Случайный", "Приоритет"],
         answer: 1, explanation: "LIFO."
       },
       {
-        id: "10-5", title: "Максимум в списке", type: "code",
-        theory: "Ищем максимум перебором.",
-        example: "m = a[0]\nfor x in a:\n    if x > m: m = x",
-        hint: "a = [3, 7, 2, 9, 5]\nm = a[0]\nfor x in a:\n    if x > m:\n        m = x\nprint(m)",
-        question: "В [3, 7, 2, 9, 5] найди и выведи максимум.",
-        starter: "a = [3, 7, 2, 9, 5]\n",
-        expectedOutput: "9",
-        explanation: "Перебор с обновлением максимума."
+        id: "10-5", title: "Второе по величине", type: "code",
+        theory: "Найди максимум, затем максимум среди оставшихся (не равных первому максимуму — или аккуратно веди два значения).",
+        example: "Храни max1 и max2 при обходе.",
+        hint: "Список [5, 9, 2, 9, 7, 1]. Второе по величине — 7 (не второе вхождение девятки). Выведи одно число.",
+        question: "a = [5, 9, 2, 9, 7, 1]. Выведи второй по величине элемент (строго меньше максимума).",
+        starter: "a = [5, 9, 2, 9, 7, 1]\n",
+        expectedOutput: "7",
+        explanation: "Макс 9, второй 7."
       },
       {
         id: "10-6", title: "SELECT", type: "quiz",
-        theory: "SELECT ... FROM таблица — выборка.",
-        example: "SELECT имя FROM Ученики;",
-        question: "Команда выборки в SQL?",
+        theory: "SELECT — выборка SQL.",
+        example: "SELECT * FROM t;",
+        question: "Команда выборки SQL?",
         options: ["GET", "SELECT", "FETCH", "READ"],
         answer: 1, explanation: "SELECT."
       },
       {
-        id: "10-7", title: "Сумма 1..10", type: "code",
-        theory: "Сумма циклом: s=0; for i in range(1,11): s+=i",
-        example: "print(sum) после цикла",
-        hint: "s = 0\nfor i in range(1, 11):\n    s = s + i\nprint(s)",
-        question: "Выведи сумму чисел от 1 до 10.",
-        starter: "",
-        expectedOutput: "55",
-        explanation: "s=0\nfor i in range(1,11):\n    s+=i\nprint(s)"
+        id: "10-7", title: "Реверс строки", type: "code",
+        theory: "Срезы s[::-1] или цикл с конца.",
+        example: "print(\"abc\"[::-1]) → cba",
+        hint: "Строка «информатика». Выведи её задом наперёд одной строкой.",
+        question: "Выведи реверс строки информатика.",
+        starter: "s = \"информатика\"\n",
+        expectedOutput: "акитамрофни",
+        explanation: "print(s[::-1])"
       },
       {
-        id: "10-8", title: "Очередь", type: "quiz",
-        theory: "Очередь: FIFO.",
+        id: "10-8", title: "Очередь FIFO", type: "quiz",
+        theory: "Первый пришёл — первый ушёл.",
         example: "Очередь в магазине.",
         question: "Принцип очереди?",
         options: ["LIFO", "FIFO", "FILO", "Случайный"],
         answer: 1, explanation: "FIFO."
       },
       {
-        id: "10-9", title: "Чётные в списке", type: "code",
-        theory: "Чётное: x % 2 == 0.",
-        example: "if x % 2 == 0: count += 1",
-        hint: "a = [1,2,3,4,5,6]\nc = 0\nfor x in a:\n    if x % 2 == 0:\n        c = c + 1\nprint(c)",
-        question: "В [1,2,3,4,5,6] посчитай количество чётных.",
-        starter: "a = [1, 2, 3, 4, 5, 6]\n",
-        expectedOutput: "3",
-        explanation: "Три чётных: 2, 4, 6."
+        id: "10-9", title: "Подсчёт по условию", type: "code",
+        theory: "Счётчик + условие в цикле. % — остаток от деления.",
+        example: "if x % 3 == 0: c += 1",
+        hint: "Сколько чисел от 1 до 50 делятся на 3 или на 5 (хотя бы на одно из них)?",
+        question: "Сколько чисел от 1 до 50 делятся на 3 или на 5? Выведи количество.",
+        starter: "",
+        expectedOutput: "23",
+        explanation: "Включение-исключение или прямой подсчёт → 23."
       },
       {
         id: "10-10", title: "BFS", type: "quiz",
-        theory: "BFS — обход в ширину.",
-        example: "Кратчайший путь в лабиринте.",
-        question: "Обход графа «в ширину»?",
+        theory: "BFS — в ширину.",
+        example: "Очередь.",
+        question: "Обход в ширину?",
         options: ["DFS", "BFS", "Dijkstra", "Prim"],
         answer: 1, explanation: "BFS."
       },
       {
-        id: "10-11", title: "Развернуть список", type: "code",
-        theory: "a[::-1] разворачивает список.",
-        example: "print([1,2,3][::-1]) → [3, 2, 1]",
-        hint: "a = [1, 2, 3, 4]\nprint(a[::-1])",
-        question: "Список [1, 2, 3, 4]. Выведи в обратном порядке.",
-        starter: "a = [1, 2, 3, 4]\n",
-        expectedOutput: "[4, 3, 2, 1]",
-        explanation: "print(a[::-1])"
+        id: "10-11", title: "Слияние условий", type: "code",
+        theory: "Построй новый список из элементов, удовлетворяющих условию.",
+        example: "r=[]\nfor x in a:\n    if ...:\n        r.append(x)",
+        hint: "Из [2, 5, 8, 11, 14, 17, 20] оставь числа, которые делятся на 2, но не делятся на 4. Выведи итоговый список.",
+        question: "Выведи список чисел из a=[2,5,8,11,14,17,20], делящихся на 2, но не на 4.",
+        starter: "a = [2, 5, 8, 11, 14, 17, 20]\n",
+        expectedOutput: "[2, 14]",
+        explanation: "2 и 14 (8 и 20 делятся на 4)."
       },
       {
-        id: "10-12", title: "Динамическое программирование", type: "quiz",
-        theory: "ДП: подзадачи + сохранение результатов.",
-        example: "Фибоначчи с мемоизацией.",
-        question: "Идея ДП:",
-        options: ["Случайный перебор", "Подзадачи и сохранение результатов", "Только рекурсия", "Жадный выбор"],
+        id: "10-12", title: "ДП идея", type: "quiz",
+        theory: "Подзадачи + сохранение результатов.",
+        example: "Фибоначчи с памятью.",
+        question: "Идея динамического программирования?",
+        options: ["Случайный перебор", "Подзадачи и сохранение", "Только рекурсия", "Жадный выбор"],
         answer: 1, explanation: "Подзадачи + память."
       }
     ],
     advanced: [
       {
-        id: "10-a1", title: "Усложнённое: O(n²)", type: "quiz",
-        theory: "Два вложенных цикла по n → O(n²).",
-        example: "for i in range(n):\n  for j in range(n):",
+        id: "10-a1", title: "O(n²)", type: "quiz",
+        theory: "Два вложенных цикла → O(n²).",
+        example: "for i: for j:",
         question: "Сложность двух вложенных for range(n)?",
         options: ["O(n)", "O(n log n)", "O(n²)", "O(2ⁿ)"],
         answer: 2, explanation: "O(n²)."
       },
       {
-        id: "10-a2", title: "Усложнённое: Фибоначчи F10", type: "code",
-        theory: "F1=1, F2=1, дальше сумма предыдущих.",
-        example: "a,b=1,1\nfor _ in range(8): a,b=b,a+b",
-        hint: "a, b = 1, 1\nfor i in range(8):\n    a, b = b, a + b\nprint(a)",
-        question: "Выведи 10-е число Фибоначчи (F1=1, F2=1).",
+        id: "10-a2", title: "Фибоначчи F12", type: "code",
+        theory: "F1=1,F2=1, Fn=F(n-1)+F(n-2).",
+        example: "Итеративно двумя переменными.",
+        hint: "Дойди до 12-го члена. F10=55, F11=89, F12=?",
+        question: "Выведи 12-е число Фибоначчи (F1=1, F2=1).",
         starter: "",
-        expectedOutput: "55",
-        explanation: "F10 = 55."
+        expectedOutput: "144",
+        explanation: "F12=144."
       },
       {
-        id: "10-a3", title: "Усложнённое: INNER JOIN", type: "quiz",
-        theory: "INNER JOIN — только совпадения.",
-        example: "SELECT * FROM A INNER JOIN B ON ...",
-        question: "JOIN только по совпадениям?",
+        id: "10-a3", title: "INNER JOIN", type: "quiz",
+        theory: "INNER — только совпадения.",
+        example: "INNER JOIN ON ...",
+        question: "JOIN только совпадений?",
         options: ["LEFT", "RIGHT", "INNER", "FULL"],
-        answer: 2, explanation: "INNER JOIN."
+        answer: 2, explanation: "INNER."
       },
       {
-        id: "10-a4", title: "Усложнённое: уникальные", type: "code",
-        theory: "Собираем уникальные: if x not in r: r.append(x)",
-        example: "Проверка «есть ли уже в списке».",
-        hint: "a = [1, 2, 2, 3, 1, 4]\nr = []\nfor x in a:\n    if x not in r:\n        r.append(x)\nprint(r)",
-        question: "Из [1, 2, 2, 3, 1, 4] выведи уникальные по порядку.",
-        starter: "a = [1, 2, 2, 3, 1, 4]\n",
-        expectedOutput: "[1, 2, 3, 4]",
-        explanation: "Добавляем, если ещё не было."
+        id: "10-a4", title: "Сортировка выбором (фрагмент)", type: "code",
+        theory: "На каждом шаге находим минимум в хвосте и ставим на текущую позицию.",
+        example: "for i in range(n):\n    for j in range(i+1,n):\n        if a[j]<a[i]: swap",
+        hint: "Отсортируй [4, 2, 7, 1, 3] по возрастанию любым алгоритмом и выведи список.",
+        question: "Отсортируй [4, 2, 7, 1, 3] по возрастанию.",
+        starter: "a = [4, 2, 7, 1, 3]\n",
+        expectedOutput: "[1, 2, 3, 4, 7]",
+        explanation: "После сортировки [1, 2, 3, 4, 7]."
       }
     ]
   },
   11: {
     title: "11 класс",
-    subtitle: "ЕГЭ, алгоритмы, современные темы",
+    subtitle: "ЕГЭ-уровень и алгоритмы",
     items: [
       {
-        id: "11-1", title: "1A1 из 16-ричной", type: "input",
-        theory: "A=10. 1·256 + 10·16 + 1 = 417.",
-        example: "1A1₁₆ = 417₁₀",
+        id: "11-1", title: "1A1₁₆", type: "input",
+        theory: "1·256+10·16+1=417.",
+        example: "1A1 → 417",
         question: "1A1 из 16-ричной в десятичную?",
-        answer: "417", explanation: "256+160+1=417."
+        answer: "417", explanation: "417."
       },
       {
-        id: "11-2", title: "Закон де Моргана", type: "quiz",
-        theory: "¬(A ∨ B) = ¬A ∧ ¬B",
-        example: "НЕ (дождь ИЛИ ветер) = НЕ дождь И НЕ ветер.",
-        question: "¬(A ∨ B) эквивалентно:",
+        id: "11-2", title: "де Морган", type: "quiz",
+        theory: "¬(A∨B)=¬A∧¬B",
+        example: "Закон де Моргана.",
+        question: "¬(A ∨ B) = ?",
         options: ["¬A ∨ ¬B", "¬A ∧ ¬B", "A ∧ B", "A ∨ ¬B"],
-        answer: 1, explanation: "Закон де Моргана."
+        answer: 1, explanation: "¬A ∧ ¬B."
       },
       {
-        id: "11-3", title: "Чётные через while", type: "code",
-        theory: "while условие: тело. Меняй переменную!",
-        example: "k=0\nwhile k<=8:\n    print(k)\n    k+=2",
-        hint: "k = 0\nwhile k <= 8:\n    print(k)\n    k = k + 2",
-        question: "Выведи чётные от 0 до 8 включительно (через while).",
+        id: "11-3", title: "НОД", type: "code",
+        theory: "while b: a,b = b, a%b",
+        example: "НОД(54,24)=6",
+        hint: "Алгоритм Евклида для 54 и 24. Когда b станет 0, в a — ответ.",
+        question: "Выведи НОД(54, 24).",
         starter: "",
-        expectedOutput: "0\n2\n4\n6\n8",
-        explanation: "while с шагом 2."
+        expectedOutput: "6",
+        explanation: "6."
       },
       {
         id: "11-4", title: "Выигрышная позиция", type: "quiz",
-        theory: "Выигрышная — есть ход в проигрышную для противника.",
-        example: "Можно взять последний камень — выигрыш.",
-        question: "Выигрышная позиция — если:",
-        options: ["Все ходы в проигрышные", "Есть ход в проигрышную для противника", "Ходов нет", "Все в выигрышные"],
-        answer: 1, explanation: "Есть ход в проигрышную соперника."
+        theory: "Есть ход в проигрышную для противника.",
+        example: "Последний камень.",
+        question: "Выигрышная позиция — если?",
+        options: ["Все ходы плохие", "Есть ход в проигрышную противнику", "Ходов нет", "Все ходы хорошие"],
+        answer: 1, explanation: "Ход в проигрышную соперника."
       },
       {
-        id: "11-5", title: "Объём информации", type: "input",
-        theory: "log₂16=4 бита на символ. 256×4=1024.",
-        example: "16 символов → 4 бита.",
-        question: "256 символов, алфавит 16. Сколько бит?",
-        answer: "1024", explanation: "256×4=1024."
+        id: "11-5", title: "Объём", type: "input",
+        theory: "256*4=1024 при 16 символах алфавита.",
+        example: "4 бита на символ.",
+        question: "256 символов, алфавит 16. Битов?",
+        answer: "1024", explanation: "1024."
       },
       {
-        id: "11-6", title: "Простые до 20", type: "code",
-        theory: "Простое — делится только на 1 и себя.",
-        example: "Проверяем делители от 2 до n-1.",
-        hint: "for n in range(2, 21):\n    ok = True\n    for d in range(2, n):\n        if n % d == 0:\n            ok = False\n    if ok:\n        print(n)",
-        question: "Выведи все простые числа от 2 до 20.",
+        id: "11-6", title: "Простые на отрезке", type: "code",
+        theory: "Для каждого n проверь делители от 2 до n-1 (или до sqrt).",
+        example: "Флаг ok=True, сброс если делится.",
+        hint: "Выведи простые от 10 до 30 включительно. 1 не простое.",
+        question: "Простые числа от 10 до 30.",
         starter: "",
-        expectedOutput: "2\n3\n5\n7\n11\n13\n17\n19",
-        explanation: "Перебор с проверкой делителей."
+        expectedOutput: "11\n13\n17\n19\n23\n29",
+        explanation: "11,13,17,19,23,29."
       },
       {
         id: "11-7", title: "Маска /24", type: "quiz",
-        theory: "255.255.255.0 = 24 единицы → /24.",
-        example: "192.168.1.0/24",
-        question: "Маска 255.255.255.0 = префикс:",
+        theory: "255.255.255.0 → /24",
+        example: "/24",
+        question: "255.255.255.0 = ?",
         options: ["/16", "/24", "/8", "/32"],
         answer: 1, explanation: "/24."
       },
       {
-        id: "11-8", title: "Переобучение", type: "quiz",
-        theory: "Overfitting — хорошо на обучении, плохо на новых данных.",
-        example: "Заучила тесты, на новом варианте — провал.",
-        question: "Переобучение — это:",
-        options: ["Плохо на обучении", "Хорошо на обучении, плохо на новых", "Мало данных", "Простая модель"],
+        id: "11-8", title: "Overfitting", type: "quiz",
+        theory: "Запомнила обучение, плохо на новых.",
+        example: "Заучила тесты.",
+        question: "Переобучение?",
+        options: ["Плохо на train", "Хорошо на train, плохо на новых", "Мало данных", "Простая модель"],
         answer: 1, explanation: "Плохое обобщение."
       },
       {
-        id: "11-9", title: "НОД Евклид", type: "code",
-        theory: "Пока b ≠ 0: a, b = b, a % b. Ответ — a.",
-        example: "a,b=48,18 → ... → 6",
-        hint: "a, b = 48, 18\nwhile b != 0:\n    a, b = b, a % b\nprint(a)",
-        question: "Найди НОД(48, 18) и выведи.",
-        starter: "",
-        expectedOutput: "6",
-        explanation: "Алгоритм Евклида."
+        id: "11-9", title: "Сумма цифр числа", type: "code",
+        theory: "Пока n>0: цифра = n%10, n = n//10.",
+        example: "123 → 1+2+3=6",
+        hint: "Число 4729. Извлекай цифры через %10 и //10, суммируй.",
+        question: "Выведи сумму цифр числа 4729.",
+        starter: "n = 4729\n",
+        expectedOutput: "22",
+        explanation: "4+7+2+9=22."
       },
       {
-        id: "11-10", title: "Асимметричное шифрование", type: "quiz",
-        theory: "Открытый ключ — публичный, закрытый — секретный.",
-        example: "RSA: шифруют открытым.",
-        question: "Открытый ключ:",
-        options: ["Секретный", "Можно распространять", "Только для расшифровки", "Одинаков у всех"],
+        id: "11-10", title: "Открытый ключ", type: "quiz",
+        theory: "Открытый ключ распространяют.",
+        example: "RSA.",
+        question: "Открытый ключ?",
+        options: ["Секретный", "Можно распространять", "Только расшифровка", "Одинаков у всех"],
         answer: 1, explanation: "Публичный."
       },
       {
-        id: "11-11", title: "Сортировка списка", type: "code",
-        theory: "Можно пузырьком или любым способом получить [1,2,3].",
-        example: "if a[j] > a[j+1]: поменять",
-        hint: "a = [3, 1, 2]\nfor i in range(len(a)):\n    for j in range(len(a)-1):\n        if a[j] > a[j+1]:\n            a[j], a[j+1] = a[j+1], a[j]\nprint(a)",
-        question: "Отсортируй [3, 1, 2] по возрастанию и выведи.",
-        starter: "a = [3, 1, 2]\n",
-        expectedOutput: "[1, 2, 3]",
-        explanation: "После сортировки [1, 2, 3]."
+        id: "11-11", title: "Уникальные с подсчётом", type: "code",
+        theory: "Можно два прохода или аккуратный один: собрать уникальные по порядку появления.",
+        example: "if x not in r: r.append(x)",
+        hint: "a=[3,1,3,2,1,4,2]. Выведи уникальные в порядке первого появления.",
+        question: "Уникальные из [3,1,3,2,1,4,2] по порядку появления.",
+        starter: "a = [3, 1, 3, 2, 1, 4, 2]\n",
+        expectedOutput: "[3, 1, 2, 4]",
+        explanation: "[3, 1, 2, 4]."
       },
       {
         id: "11-12", title: "Этика ИИ", type: "quiz",
-        theory: "Важны прозрачность, справедливость, ответственность.",
-        example: "Система найма не должна дискриминировать.",
-        question: "Важный принцип ИИ:",
+        theory: "Прозрачность, справедливость, ответственность.",
+        example: "Без дискриминации.",
+        question: "Важный принцип ИИ?",
         options: ["Закрытость", "Прозрачность и справедливость", "Игнор предвзятости", "Только скорость"],
-        answer: 1, explanation: "Fairness, transparency."
+        answer: 1, explanation: "Fairness."
       }
     ],
     advanced: [
       {
-        id: "11-a1", title: "Усложнённое: порядок сложностей", type: "quiz",
+        id: "11-a1", title: "Порядок O", type: "quiz",
         theory: "n log n < n² < 2ⁿ < n!",
-        example: "20! огромно по сравнению с 2²⁰.",
+        example: "Факториал растёт быстрее всех.",
         question: "По возрастанию: O(n!), O(n²), O(2ⁿ), O(n log n)",
         options: [
           "O(n log n), O(n²), O(2ⁿ), O(n!)",
@@ -724,32 +723,82 @@ const EXERCISES = {
         answer: 0, explanation: "n log n < n² < 2ⁿ < n!."
       },
       {
-        id: "11-a2", title: "Усложнённое: Фибоначчи F15", type: "code",
-        theory: "F15 = 610.",
-        example: "Итеративно до 15-го.",
-        hint: "a, b = 1, 1\nfor i in range(13):\n    a, b = b, a + b\nprint(b)",
-        question: "Выведи 15-е число Фибоначчи (F1=1, F2=1).",
+        id: "11-a2", title: "F15", type: "code",
+        theory: "F15=610.",
+        example: "Итеративный подсчёт.",
+        hint: "F10=55, F15=610. Дойди циклом до 15-го члена.",
+        question: "15-е число Фибоначчи (F1=1,F2=1)?",
         starter: "",
         expectedOutput: "610",
-        explanation: "F15 = 610."
+        explanation: "610."
       },
       {
-        id: "11-a3", title: "Усложнённое: Дейкстра", type: "quiz",
-        theory: "Дейкстра — кратчайшие пути, веса ≥ 0.",
-        example: "Маршрут по карте.",
-        question: "Алгоритм Дейкстры находит:",
-        options: ["Макс. поток", "Кратчайшие пути (веса ≥ 0)", "Остовное дерево", "Эйлеров цикл"],
+        id: "11-a3", title: "Дейкстра", type: "quiz",
+        theory: "Кратчайшие пути, веса ≥ 0.",
+        example: "Карта дорог.",
+        question: "Дейкстра находит?",
+        options: ["Макс. поток", "Кратчайшие пути (w≥0)", "Остов", "Эйлеров цикл"],
         answer: 1, explanation: "Кратчайшие пути."
       },
       {
-        id: "11-a4", title: "Усложнённое: 2 в степени 10", type: "code",
-        theory: "2ⁿ циклом: p=1; n раз p*=2.",
-        example: "p=1\nfor _ in range(10):\n    p*=2",
-        hint: "p = 1\nfor i in range(10):\n    p = p * 2\nprint(p)",
-        question: "Вычисли 2¹⁰ и выведи.",
+        id: "11-a4", title: "2^12", type: "code",
+        theory: "Умножение в цикле 12 раз.",
+        example: "p=1; 12 раз p*=2",
+        hint: "2¹² = 4096. Цикл умножения на 2.",
+        question: "Выведи 2¹².",
         starter: "",
-        expectedOutput: "1024",
-        explanation: "2¹⁰ = 1024."
+        expectedOutput: "4096",
+        explanation: "4096."
+      },
+      {
+        id: "11-q1", title: "★ Квест: Шифр Цезаря", type: "code",
+        theory: "Пошагово:\n1) Берём каждую букву текста.\n2) Сдвигаем её в алфавите на k позиций вперёд.\n3) Если вышли за «я» — возвращаемся к началу алфавита (по модулю).\n4) Не-буквы можно оставлять как есть.\n\nЗдесь для упрощения: только строчные русские буквы «абвгдежзийклмнопрстуфхцчшщъыьэюя» (33 буквы). Сдвиг k=3.",
+        example: "«б» при k=3 → «д». «я» при k=3 → «в».",
+        hint: "Составь строку-алфавит. Для каждой буквы найди индекс, новый индекс = (индекс+3) % 33, добавь алфавит[новый]. Собери результат и выведи. Исходная строка уже в переменной text.",
+        question: "Зашифруй text = \"абв\" шифром Цезаря с сдвигом 3. Выведи шифротекст.",
+        starter: "text = \"абв\"\nalphabet = \"абвгдежзийклмнопрстуфхцчшщъыьэюя\"\nk = 3\n",
+        expectedOutput: "где",
+        explanation: "а→г, б→д, в→е → «где»."
+      },
+      {
+        id: "11-q2", title: "★ Квест: Анализ оценок", type: "code",
+        theory: "Пошагово:\n1) Дан список оценок.\n2) Посчитай среднее (сумма/количество).\n3) Посчитай, сколько пятёрок.\n4) Найди минимальную оценку.\n5) Выведи три числа: среднее (с десятичной), количество пятёрок, минимум — каждое с новой строки.",
+        example: "marks=[5,4,5,3] → среднее 4.25, пятёрок 2, мин 3",
+        hint: "Один проход или несколько. Среднее — через / (будет float). Не округляй. Список: [5, 4, 5, 3, 5, 2, 4]",
+        question: "marks = [5, 4, 5, 3, 5, 2, 4]. Выведи:\nсреднее\nчисло пятёрок\nминимальную оценку",
+        starter: "marks = [5, 4, 5, 3, 5, 2, 4]\n",
+        expectedOutput: "4.0\n3\n2",
+        explanation: "Сумма 28, /7 = 4.0; три пятёрки; мин 2."
+      },
+      {
+        id: "11-q3", title: "★ Квест: Угадай правило ряда", type: "code",
+        theory: "Пошагово:\n1) Дан список чисел — начало ряда.\n2) Нужно продолжить ряд ещё несколькими членами по тому же правилу.\n3) Правило: каждый следующий = сумма двух предыдущих (как Фибоначчи), но старт другой.\n4) Выведи только новые члены (не исходные), по одному на строку.",
+        example: "Если [1,2,3] и правило «сумма двух предыдущих», далее 5, 8, 13...",
+        hint: "Ряд начинается [2, 5, 7, 12]. Добавь ещё 4 члена по правилу «сумма двух предыдущих». Печатай только 4 новых числа.",
+        question: "Ряд: 2, 5, 7, 12, ... Выведи следующие 4 члена.",
+        starter: "seq = [2, 5, 7, 12]\n",
+        expectedOutput: "19\n31\n50\n81",
+        explanation: "12+7=19, 19+12=31, 31+19=50, 50+31=81."
+      },
+      {
+        id: "11-q4", title: "★ Квест: Матрица — диагональ", type: "code",
+        theory: "Пошагово:\n1) Квадратная матрица — список списков: m[i][j].\n2) Главная диагональ: i == j.\n3) Побочная: i + j == n-1.\n4) Нужно посчитать сумму элементов главной диагонали.",
+        example: "[[1,2],[3,4]] → главная 1+4=5",
+        hint: "Матрица 3×3 уже в m. Пройди i от 0 до 2, бери m[i][i], суммируй.",
+        question: "m = [[1,2,3],[4,5,6],[7,8,9]]. Выведи сумму главной диагонали.",
+        starter: "m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n",
+        expectedOutput: "15",
+        explanation: "1+5+9=15."
+      },
+      {
+        id: "11-q5", title: "★ Квест: Частотный словарь", type: "code",
+        theory: "Пошагово:\n1) Дан список чисел (могут повторяться).\n2) Для каждого уникального числа нужно узнать, сколько раз оно встречается.\n3) Выведи пары «число количество» в порядке первого появления числа, каждая пара с новой строки.\n4) Можно: внешний список уникальных + подсчёт count, или имитация словаря списками.",
+        example: "[1,2,1] →\n1 2\n2 1",
+        hint: "Сначала собери уникальные в порядке появления. Для каждого посчитай, сколько раз он есть в исходном списке. Формат вывода: print(число, количество).",
+        question: "a = [4, 1, 4, 2, 1, 4, 3]. Выведи частоты в порядке первого появления.",
+        starter: "a = [4, 1, 4, 2, 1, 4, 3]\n",
+        expectedOutput: "4 3\n1 2\n2 1\n3 1",
+        explanation: "4→3, 1→2, 2→1, 3→1."
       }
     ]
   }
